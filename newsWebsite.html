@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title>News</title>
+
+		<style>
+	#headlines{
+		height: 35px;
+		width: 300px;
+	}
+
+	#details{
+		height: 35px;
+		width: 300px;
+	}
+	
+	#addBtn{
+		height: 35px;
+		width: 50px;
+	}
+
+	#heading{
+		font-size: 30px;
+        display: block;
+		font-weight: bold;
+	}
+	#storyline{
+		margin-top: 2px;
+		
+	}
+	#article{
+		
+		margin-top: 1px;
+		margin-bottom: 2px;
+		margin-right: 10px;
+        border-bottom: 0.5px black solid;
+		
+		display: block;
+        margin: 5px;
+        padding: 5px;
+		width: 70%;
+	}
+	#entireNews:after{
+        height: 300px;
+        margin: 0px;
+	}
+
+	</style>
+
+
+		<script type="text/javascript">
+			function addNews(){
+				var head = document.getElementById('headlines').value;
+				var detail = document.getElementById('details').value;
+
+				addNewsToDiv(head, detail);
+
+			}
+
+			function addNewsToDiv(headline, story){
+				var div = document.createElement('DIV');
+				var div2 = document.createElement('DIV');	
+				var div3 = document.createElement('DIV');						
+				var head = document.createTextNode(headline);
+				var details = document.createTextNode(story);
+
+				var entire = document.getElementById('entireNews');				
+
+				div.appendChild(div2);
+				div.appendChild(div3);				
+				div2.appendChild(head);
+				div3.appendChild(details);	
+
+				div.id = "article";
+				div2.id = "heading";
+				div3.id = "storyline";
+
+				entire.appendChild(div);
+			}
+		</script>
+
+	</head>
+
+	<body>
+            <h2> News Automation Assignment</h2>
+		<input  type="text" id="headlines">
+		<input  type="text" id="details">
+
+		<button id="addBtn" onclick='addNews()'> Add </button>
+
+		<div id="entireNews"></div>
+	</body>
+
+</html>
